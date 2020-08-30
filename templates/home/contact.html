@@ -1,0 +1,115 @@
+{% extends 'home/basic.html'%}
+
+{%block title%}Contact us {%endblock%}
+{% block contactactive%} active {% endblock contactactive%}
+
+{%block css%}
+      body {
+            background-color: #e9ecef;
+            ;
+        }
+        .container {
+            border: 2px solid black;
+            border-radius: 21px;
+            /* text-align: center; */
+            background-color: white;
+            align-items: center;
+            justify-content: center;
+            width:666px;
+            color: black;
+
+        }
+        .head{
+            text-align:center;
+            font-size: 44px;
+        }
+        .button1{
+            display:flex;
+            text-align: center;
+            align-items:center;
+            justify-content: center;
+
+
+
+        }
+.list{
+
+        list-style:none;
+
+      }
+      .list a{
+      color:white;
+    }
+    .footer{
+    background-color:#494747;
+  }
+
+{%endblock%}
+
+
+{%block body%}
+
+<div class="container my-4">
+        <h1 class="my-4 head">Contact Us</h1>
+    <form action="/contact" method="post">{% csrf_token %}
+        <div class="form-group">
+            <label for="name" style="font-weight: bold; font-size:21px"> Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Name">
+        </div>
+
+
+        <div class="form-group">
+            <label for="email" style="font-weight: bold; font-size:21px">Email Address</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email">
+        </div>
+
+        <div class="form-group">
+            <label for="contact1" style="font-weight: bold; font-size:21px"> Phone Number</label>
+            <input type="phone" class="form-control" id="contact1" name="phone" placeholder="Enter Your Phone Number">
+        </div>
+
+
+
+        <div class="form-group">
+            <label for="textarea" style="font-weight: bold ; font-size:21px">Describe Your Issue:</label>
+            <textarea class="form-control" id="textarea" name="textarea" rows="6"></textarea>
+        </div>
+        <div class="center">
+        <button type="submit" id="btn" class=" button1 btn btn-success my-2">Submit Now</button>
+        </div>
+    </form>
+
+    </div>
+<div class="footer my-4">
+    <div class="container-fluid" style="margin-top: 234px;">
+
+        <div class="row row-cols-1 row-cols-md-3">
+  <div class="col mb-4 col-sm-12">
+      <ul>
+
+          <li class="list"><a href="/">Home</a></li>
+          <li class="list"><a href="/contact">Contact Us</a></li>
+          <li class="list"><a href="/about">About Us</a></li>
+
+      </ul>
+  </div>
+  <div class="col mb-4 col-sm-12 ">
+    <form action="/shop" method="post">{% csrf_token %}
+    <label for="email"  style="color: white;" class="my-4"> Enter Your Email Address:</label>
+    <br>
+    <input type="email" name="email" placeholder="Enter your Email" style="width: 450px;">
+    <button type="Submit" class="btn btn-outline-secondary my-4">Submit</button>
+    </form>
+  </div>
+  <div class="col mb-4 col-sm-12 my-4" style="color: white;">
+      <h3 style="color: white;">Details</h3>
+      <b> Contact No. - </b><p>+91 6355007117</p>
+      <b>Email Address - </b><p>priyanshumalaviya17@gmail.com</p>
+    </div>
+  </div>
+
+</div>
+    </div>
+
+</div>
+{%endblock%}
